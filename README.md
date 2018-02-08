@@ -1,4 +1,4 @@
-Tweaked from openJPEG.
+Tweaked from [openJPEG](https://github.com/uclouvain/openjpeg).
 
 Currently only works with 512x512 image tiles.
 
