@@ -3,20 +3,20 @@
 
 /* 5-3 2D Discrete Wavelet Transform*/
 
-#define OPJ_S(i) a[(i)*2]
-#define OPJ_D(i) a[(1+(i)*2)]
-#define OPJ_S_(i) ((i)<0?OPJ_S(0):((i)>=sn?OPJ_S(sn-1):OPJ_S(i)))
-#define OPJ_D_(i) ((i)<0?OPJ_D(0):((i)>=dn?OPJ_D(dn-1):OPJ_D(i)))
+#define S(i) a[(i)*2]
+#define D(i) a[(1+(i)*2)]
+#define S_(i) ((i)<0?S(0):((i)>=sn?S(sn-1):S(i)))
+#define D_(i) ((i)<0?D(0):((i)>=dn?D(dn-1):D(i)))
 
 static void dwt_1d(int *a, int dn, int sn)
 {
 	int i;
 
 	for (i = 0; i < dn; i++) {
-		OPJ_D(i) -= (OPJ_S_(i) + OPJ_S_(i + 1)) >> 1;
+		D(i) -= (S_(i) + S_(i + 1)) >> 1;
 	}
 	for (i = 0; i < sn; i++) {
-		OPJ_S(i) += (OPJ_D_(i - 1) + OPJ_D_(i) + 2) >> 2;
+		S(i) += (D_(i - 1) + D_(i) + 2) >> 2;
 	}
 }
 
