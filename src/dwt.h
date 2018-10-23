@@ -1,3 +1,3 @@
 #pragma once
 
-static void dwt_1d(int *a, int dn, int sn);
+void dwt_2d(int* data, int resolutions);
