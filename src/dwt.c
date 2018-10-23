@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <malloc.h>
+#include <stdlib.h>
 
 /* 5-3 2D Discrete Wavelet Transform*/
 
@@ -140,4 +140,6 @@ void dwt_2d(int* data, int resolutions)
 		l_last_res.x1 >>= 1;
 		l_last_res.y1 >>= 1;
 	}
+
+	free(bj);
 }

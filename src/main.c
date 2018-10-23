@@ -27,6 +27,7 @@ int main(int argc, char **argv) {
 	read_stream(argv[2], codestream, n);
 	dwt_2d(codestream, atoi(argv[1]));
 	write_stream(argv[3], codestream, n);
+	free(codestream);
 	printf("%s has been transformed and stored to %s\n", argv[2], argv[3]);
 	return 0;
 }
