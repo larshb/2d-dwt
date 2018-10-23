@@ -13,6 +13,7 @@ void read_stream(const char* file, int* buffer, int n) {
 void write_stream(const char* file, int* buffer, int n) {
 	FILE *fp = fopen(file, "wb");
 	fwrite(buffer, sizeof(int), n, fp);
+	fclose(fp);
 }
 
 int main(int argc, char **argv) {
