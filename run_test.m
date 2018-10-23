@@ -25,8 +25,8 @@ function run_test()
     imshowpair(raw, uint8(wav+128*(~UNBIASED)), 'montage');
 
     % Cleanup
-    system('del input.bin');
-    system('del output.bin');
+    delete('input.bin');
+    delete('output.bin');
 
 end
 
